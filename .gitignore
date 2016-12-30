@@ -1,3 +1,6 @@
+
+# Created by https://www.gitignore.io/api/node
+
 ### Node ###
 # Logs
 logs
@@ -47,4 +50,11 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-dist/
+
+# End of https://www.gitignore.io/api/node
+
+app/*
+!app/main.js
+!app/package.json
+
+src/**/*.css.d.ts

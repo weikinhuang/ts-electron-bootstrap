@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2016",
-    "module": "commonjs",
+    "module": "ES2015",
     "moduleResolution": "node",
     "sourceMap": true,
     "lib": [
@@ -16,6 +16,9 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "jsx": "react",
+    "types": [
+      "node"
+    ],
     "baseUrl": "./src/",
     "paths": {
       "*": [

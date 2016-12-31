@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -19,17 +18,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // setup webpack plugins
 const plugins = [
-  // https://github.com/kevlened/copy-webpack-plugin
-  new CopyWebpackPlugin([
-    {
-      context: 'public',
-      from: { glob: '**/*', dot: true },
-    }
-  ]),
   // https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
     title: appPackage.appTitle,
-    filename: 'index.html',
+    filename: '../index.html',
     template: 'src/index.template.ejs',
     inject: true,
     hash: true,
@@ -193,7 +185,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve('app'),
+    path: path.resolve('app/dist'),
     publicPath: ''
   },
   // https://webpack.github.io/docs/configuration.html#target

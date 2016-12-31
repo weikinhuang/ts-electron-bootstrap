@@ -53,8 +53,7 @@ jspm_packages
 
 # End of https://www.gitignore.io/api/node
 
-app/*
-!app/main.js
-!app/package.json
-
+app/dist/*
+app/index.html
+release/*
 src/**/*.css.d.ts

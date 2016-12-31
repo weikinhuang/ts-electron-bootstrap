@@ -1,10 +1,10 @@
 {
   "name": "ts-electron-boilerplate",
   "productName": "ts-electron-boilerplate",
-  "version": "0.0.0",
-  "description": "",
-  "author": "",
   "appTitle": "ts-electron-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate for creating a electron all with react and typescript.",
+  "author": "Wei Kin Huang",
   "repository": {
     "type": "git",
     "url": ""

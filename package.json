@@ -8,23 +8,24 @@
     "url": "https://github.com/weikinhuang/ts-electron-bootstrap"
   },
   "license": "MIT",
-  "main": "app/main.js",
+  "main": "app/electron/main.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development electron app",
-    "server": "webpack-dev-server --progress --config webpack.config.js --inline --hot --content-base app/",
+    "start": "npm run build-main && cross-env NODE_ENV=development electron app",
+    "dev": "webpack-dev-server --progress --config webpack.config.js --inline --hot --content-base app/",
+    "compile-main": "tsc --outDir app/electron/ --project src/electron/",
+    "compile-main:watch": "npm run build-main -- --watch",
     "lint-css": "stylelint \"src/**/*.css\"",
     "lint-ts": "tslint \"src/**/*.ts?(x)\"",
     "lint": "npm run lint-css && npm run lint-ts",
     "test": "jasmine JASMINE_CONFIG_PATH=./test/jasmine/jasmine.json",
     "test:watch": "nodemon --ext ts,tsx --watch src --watch test/jasmine/spec node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=./test/jasmine/jasmine.json",
     "tcm": "tcm src",
-    "prepackage": "npm run tcm && cross-env NODE_ENV=production webpack",
+    "prepackage": "npm run tcm && npm run compile-main && cross-env NODE_ENV=production webpack",
     "package": "npm run prepackage && build --dir",
     "build": "npm run prepackage && build --x64",
     "build-mac": "npm run prepackage && build --mac --x64",
     "build-win": "npm run prepackage && build --win --x64",
-    "build-linux": "npm run prepackage && build --linux --x64",
-    "archive-builds": "tar -zcf builds.tar.gz dist/"
+    "build-linux": "npm run prepackage && build --linux --x64"
   },
   "build": {
     "productName": "ElectronReact",
@@ -60,6 +61,7 @@
     "output": "release"
   },
   "devDependencies": {
+    "@types/electron": "^1.4.30",
     "@types/enzyme": "^2.5.39",
     "@types/jasmine": "^2.5.40",
     "@types/node": "^6.0.38",
@@ -100,6 +102,7 @@
     "webpack": "^2.2.0-rc.3",
     "webpack-dev-server": "^2.2.0-rc.0",
     "webpack-fail-plugin": "^1.0.5",
+    "webpack-hot-middleware": "^2.14.0",
     "webpack-notifier": "^1.4.1",
     "worker-loader": "^0.7.1"
   },

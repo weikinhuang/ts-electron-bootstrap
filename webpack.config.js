@@ -120,7 +120,7 @@ const rules = [
       'style-loader',
       {
         loader: 'css-loader',
-        options: {
+        query: {
           modules: false,
           minimize: isProduction,
           sourceMap: !isProduction,
@@ -138,7 +138,7 @@ const rules = [
       'style-loader',
       {
         loader: 'css-loader',
-        options: {
+        query: {
           modules: true,
           minimize: isProduction,
           sourceMap: !isProduction,
@@ -180,13 +180,13 @@ module.exports = {
   devtool: !isProduction ? '#source-map' : false,
   entry: [
     ...entryPre,
-    'index.ts',
+    'renderer/index.ts',
     ...entryPost,
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve('app/dist'),
-    publicPath: ''
+    path: path.resolve('app/renderer'),
+    publicPath: 'renderer/'
   },
   // https://webpack.github.io/docs/configuration.html#target
   target: 'electron-renderer',
@@ -203,15 +203,6 @@ module.exports = {
   },
   // no need to include election specific dependencies with the webpack bundle
   externals: Object.keys(appPackage.dependencies || {}),
-  /**
-   * Disables webpack processing of __dirname and __filename.
-   * If you run the bundle in node.js it falls back to these values of node.js.
-   * https://github.com/webpack/webpack/issues/2010
-   */
-  node: {
-    __dirname: false,
-    __filename: false
-  },
   plugins,
   devServer
 };

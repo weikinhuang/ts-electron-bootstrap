@@ -10,7 +10,7 @@
     "url": ""
   },
   "license": "MIT",
-  "main": "./main.js",
+  "main": "./electron/main.js",
   "dependencies": {
   }
 }

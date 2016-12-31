@@ -1,0 +1,14 @@
+{
+  "spec_dir": "test/jasmine/spec",
+  "spec_files": [
+    "**/*.[sS]pec.ts",
+    "**/*.[sS]pec.tsx"
+  ],
+  "helpers": [
+    "ts-node/register",
+    "ignore-styles",
+    "helpers/**/*.js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}

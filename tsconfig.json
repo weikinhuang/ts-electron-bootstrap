@@ -16,9 +16,6 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "jsx": "react",
-    "types": [
-      "node"
-    ],
     "baseUrl": "./src/",
     "paths": {
       "*": [

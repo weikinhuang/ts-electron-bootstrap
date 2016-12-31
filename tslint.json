@@ -58,7 +58,9 @@
     "radix": true,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape",
+      "jsx-double"
     ],
     "semicolon": true,
     "triple-equals": [

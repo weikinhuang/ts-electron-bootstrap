@@ -1,0 +1,16 @@
+{
+  "name": "ts-electron-boilerplate",
+  "productName": "ts-electron-boilerplate",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "appTitle": "ts-electron-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "main": "./main.js",
+  "dependencies": {
+  }
+}
